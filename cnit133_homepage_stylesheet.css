@@ -1,0 +1,99 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    
+    font-family: 'Montserrat', sans-serif;
+    background-color:#caebf2;
+/*    text-align: center;*/
+   
+}
+
+
+/*buttons and links*/
+ul {
+    list-style: none;
+
+}
+
+.button {
+/*    text-align: center;*/
+    border: solid #ff3b3f 3px;
+    border-radius: 50px;
+    padding: 10px 10px;
+/*    margin-right: 75px;*/
+    margin-right: 70px;
+    margin-left: 30px;
+    margin-bottom: 25px;
+}
+.button> a:link {
+    text-decoration: none;
+}
+.button:hover {
+    background-color: #caebf2;
+}
+
+/*links*/
+a:link {
+    color:#696767;
+}
+a:visited {
+    color:#fa5558;
+}
+a:hover {
+    color: #987c7c;
+}
+
+/*desktop showing grid*/
+.wrapper{
+    width: 80%;
+    background-color: #efefef;
+    margin: 0 auto;
+    margin-top: 40px;
+    max-width: 960px;
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "header" 
+                         "nav"
+                          "" ;
+}
+.header{
+    grid-area: header;
+    grid-column: 1/3;
+    grid-row: 1/2; 
+    background-color:white;
+    
+}
+
+.nav {
+    grid-area: nav;
+    grid-column: 1/3;
+    grid-row: 3/4;
+    font-size: 90%;
+    padding:40px; 
+    
+}
+
+/*styling inside the grid- headers*/
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-size: 275%;
+    color: #696767; 
+}
+
+h2 {
+    text-align: center;
+}
+h5 {
+    text-align: center;
+    font-style: italic;
+}
+    
+
+
+
