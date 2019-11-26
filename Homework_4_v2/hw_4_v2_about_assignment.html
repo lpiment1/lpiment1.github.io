@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="assignment Instructions">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNIT 133m Homework 4_About Assignment Instructions</title>
+    <link rel="stylesheet" href="hw_4_v2_stylesheet.css">
+
+
+    <!--    WRITE JAVASCRIPT-->
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        function chooseLightBlueBackground() {
+            document.body.style.backgroundImage = "url('images_v2/lightblue_v2.jpg')";
+        }
+
+        function chooseLightGoldBackground() {
+            document.body.style.backgroundImage = "url('images_v2/lightgold_v2.jpg')";
+        }
+    </script>
+
+    <!--    END OF JAVASCRIPT-->
+
+    <link rel="manifest" href="manifest_v2.json">
+</head>
+
+<body>
+    <!-- NAV AREA -->
+
+    <div class="topnav" id="myTopnav">
+        <a href="hw_4_v2_index.html" class="active">Home</a>
+
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+
+                <a href="#" id="lighblue_photo" onclick="chooseLightBlueBackground()">Lightblue</a>
+
+                <a href="#" id="lightgold_photo" onclick="chooseLightGoldBackground()">Lightgold</a>
+
+                <!-- <a href="#">Link 3</a> -->
+            </div>
+        </div>
+        <a href="#about">About Assignment</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+
+    <!--MAIN CONTENT-->
+
+    <div>
+        <h1>Assignment Instructions</h1>
+        <p> <span>Objectives:</span> You understood and are able to work with Service Workers. You will also be able to
+            demonstrate
+            what you understood by PWA's and even create a basic PWA with the manifest file so users will be able to see
+            the possibility of installing your web app on their desktop.</p>
+
+        <p>You will find in the hw4 folder of the files you downloaded, two images that you will be using to complete
+            this part of the assignment.</p>
+
+        <p>You will create a simple page (named index.html) that will have a heading, and at least two paragraphs where
+            you will be explaining what are the main characteristics of a PWA (Progressive Web Application). You will
+            also give to the user a drop-down select so the user can select the type of background should be applied to
+            the page - light blue or light gold - once the user clicks the button to change the background, you will use
+            the respective images that you found in hw4 folder.</p>
+
+        <p>Create some style to that page using an external CSS file and start the page with a plain white background
+            color.</p>
+
+        <p>Create a manifest file for that basic PWA pop-up window Chrome to install or not PWAso the user will be able
+            to see the option to install the application when using the menu of the browser - see the image shown here
+            when a simple PWA was created with the manifest file showing the confirmation to install or not the app (the
+            black spot is just not to show the server that this is coming from as your would be showing the server that
+            your application is coming from.</p>
+
+        <p>You will also create a service-worker.js file in order to make that PWA page work even when the user is
+            offline - even the change of the background image should be able to work as the images would also be cached!
+        </p>
+
+        <p>When you finish your work, you will upload ALL files to your web server account. Do not forget to test in
+            your desktop/laptop browser and also in some mobile devices using https:// in front of the URL (make sure
+            that the server you are using allows you to use https://).</p>
+
+
+    </div>
+
+    <script src="hw_4_v2_app.js"></script>
+    <!--    the app.js file and that script makes reference to the service-worker.js file which is the script that list the assets(files) that we want to catch with the service worker. the app.js file has basically the same code presented before it will test of the browser supports service workers.-->
+</body>
+
+</html>

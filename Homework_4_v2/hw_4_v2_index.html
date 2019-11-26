@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="learning about PWA's">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNIT 133m Homework 4</title>
+    <link rel="stylesheet" href="hw_4_v2_stylesheet.css">
+
+
+    <!--    WRITE JAVASCRIPT-->
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        function chooseLightBlueBackground() {
+            document.body.style.backgroundImage = "url('images_v2/lightblue_v2.jpg')";
+        }
+
+        function chooseLightGoldBackground() {
+            document.body.style.backgroundImage = "url('images_v2/lightgold_v2.jpg')";
+        }
+    </script>
+
+    <!--    END OF JAVASCRIPT-->
+
+    <link rel="manifest" href="manifest_v2.json">
+</head>
+
+<body>
+    <!-- NAV AREA -->
+
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+
+                <a href="#" id="lighblue_photo" onclick="chooseLightBlueBackground()">Lightblue</a>
+
+                <a href="#" id="lightgold_photo" onclick="chooseLightGoldBackground()">Lightgold</a>
+
+                <!-- <a href="#">Link 3</a> -->
+            </div>
+        </div>
+        <a href="hw_4_v2_about_assignment.html">About Assignment</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+
+    <!--MAIN CONTENT-->
+
+    <div>
+        <h1>Learning About Service Workers and PWA's</h1>
+        <p> PWA stands for Progressive Web Applications and it is a type of app that can be used when the user is
+            offline and the user can also install it in their device. PWA's are fast, reliable and engaging. Advantages
+            of building PWA's according to the lecture are:</p>
+        <ul>
+            <li><span>Worthy being on the home screen - </span> when the PWA criteria is met, Chrome will prompt users
+                to add the PWA to their home screen</li>
+            <li><span>Reliability no matter the network status - </span> service workers help sending data faster which
+                will then allow
+                users to complete tasks faster</li>
+            <li><span>More engagement - </span>depending on how you use the push notifications, you might increase
+                engagement which might directly or indirectly increase sales</li>
+        </ul>
+
+        <p> In order for a PWA app to work it needs a basic HTML file, Javascript file, Manifest file and a Service-Worker file
+            is a must, and a CSS for styling purposes. But remember that service-worker will only work with https
+            otherwise it won't work. The way the service worker file works is by first registering (if the browser
+            supports it. If the browser does support then the registering process beigns with a promise method. The
+            promise method installs the service worker, then it activates it with an event (by storing all the files)
+            and then it fetches it (which is responsable for fetching all the cashed files in case the user is offline).
+        </p>
+
+        <h2>Select a background image</h2>
+        <p>From the nav bar, hover over on the dropdown and select an image for background.
+
+        </p>
+
+        <!-- <input type="button" class="buttonReset" onclick="reset()" value=Reset> -->
+
+    </div>
+
+    <script src="hw_4_v2_app.js"></script>
+    <!--    the app.js file and that script makes reference to the service-worker.js file which is the script that list the assets(files) that we want to catch with the service worker. the app.js file has basically the same code presented before it will test of the browser supports service workers.-->
+</body>
+
+</html>
